@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon dist/index.js",
+    "build": "tsc -b",
+    "dev": "npm run start && npm run build"
   },
   "repository": {
     "type": "git",
@@ -16,5 +19,11 @@
     "url": "https://github.com/striverz/MindVault-Backend/issues"
   },
   "homepage": "https://github.com/striverz/MindVault-Backend#readme",
-  "description": ""
+  "description": "",
+  "dependencies": {
+    "express": "^5.1.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.1"
+  }
 }
