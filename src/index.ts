@@ -2,9 +2,12 @@ import dotenv from "dotenv";
 dotenv.config();
 import express from "express";
 import ConnectDB from "./config/connectDB";
+import authRouter from "./routes/authRouter";
 
 const app = express();
 const PORT = process.env.PORT;
+
+app.use("/api/v1", authRouter);
 
 ConnectDB()
   .then(() => {
