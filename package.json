@@ -6,7 +6,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon dist/index.js",
     "build": "tsc -b",
-    "dev": "npm run start && npm run build"
+    "dev": "npm run build && npm run start"
   },
   "repository": {
     "type": "git",
@@ -21,7 +21,9 @@
   "homepage": "https://github.com/striverz/MindVault-Backend#readme",
   "description": "",
   "dependencies": {
-    "express": "^5.1.0"
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "mongoose": "^8.14.0"
   },
   "devDependencies": {
     "@types/express": "^5.0.1"
