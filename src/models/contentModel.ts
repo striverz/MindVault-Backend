@@ -1,4 +1,5 @@
-import mongoose, { Types } from "mongoose";
+import mongoose from "mongoose";
+
 const contentSchema = new mongoose.Schema(
   {
     title: {
@@ -16,13 +17,12 @@ const contentSchema = new mongoose.Schema(
     imageUrl: {
       type: String,
     },
-    tags: [{ type: String }],
     userId: {
-      type: Types.ObjectId,
+      type: mongoose.Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
   },
   { timestamps: true }
 );
+
 export const ContentModel = mongoose.model("Content", contentSchema);
