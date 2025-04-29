@@ -10,6 +10,7 @@ const connectDB_1 = __importDefault(require("./config/connectDB"));
 const authRouter_1 = __importDefault(require("./routes/authRouter"));
 const app = (0, express_1.default)();
 const PORT = process.env.PORT;
+app.use(express_1.default.json());
 app.use("/api/v1", authRouter_1.default);
 (0, connectDB_1.default)()
     .then(() => {

@@ -1,1 +1,1 @@
-{"root":["./src/index.ts","./src/config/connectdb.ts","./src/models/contentmodel.ts","./src/models/linkmodel.ts","./src/models/usermodel.ts","./src/routes/authrouter.ts"],"version":"5.8.3"}
+{"root":["./src/index.ts","./src/config/connectdb.ts","./src/models/contentmodel.ts","./src/models/linkmodel.ts","./src/models/usermodel.ts","./src/routes/authrouter.ts","./src/utils/validation.ts"],"version":"5.8.3"}

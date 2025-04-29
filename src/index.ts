@@ -6,6 +6,7 @@ import authRouter from "./routes/authRouter";
 
 const app = express();
 const PORT = process.env.PORT;
+app.use(express.json());
 
 app.use("/api/v1", authRouter);
 
