@@ -43,6 +43,13 @@ authRouter.post("/signin", async (req, res) => {
       userFound.password as string
     );
     if (!isPasswordValid) throw new Error("Invalid Credentials");
+    const token = jwt.sign(
+      {
+        id: userFound._id,
+      },
+      process.env.JWT_USER_SECRET as string
+    );
+    res.cookie("token", token);
 
     res.json({
       message: "User Login Successful",
@@ -54,7 +61,16 @@ authRouter.post("/signin", async (req, res) => {
   }
 });
 authRouter.post("/logout", (req, res) => {
-  res.json("Signup Succcessful");
+  try {
+    res.cookie("token", null, { expires: new Date(Date.now()) });
+    res.json({
+      message: "User Logout Successful",
+    });
+  } catch (err) {
+    res.send(401).json({
+      message: (err as Error).message,
+    });
+  }
 });
 
 export default authRouter;
